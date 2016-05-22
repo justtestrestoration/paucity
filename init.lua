@@ -34,7 +34,7 @@ minetest.register_craft({
 })
 
 -- -----------------------------------
--- -----------------------------------
+-- -------node registration-----------
 -- -----------------------------------
 
 --emptymoney
@@ -48,6 +48,13 @@ minetest.register_node("paucity:emptymoney", {
 minetest.register_node("paucity:ironmoney", {
 	description = "ironmoney",
 	tiles = {"ironmoney.png"},
+	groups = {choppy=2,dig_immediate=2},
+})
+
+--protectmoney
+minetest.register_node("paucity:protectmoney", {
+	description = "protectmoney",
+	tiles = {"protectmoney.png"},
 	groups = {choppy=2,dig_immediate=2},
 })
 
@@ -110,6 +117,16 @@ minetest.register_craft({
 	}
 })
 
+--how to craft protectmoney
+minetest.register_craft({
+	output = 'paucity:protectmoney',
+	recipe = {
+		{"paucity:ironmoney","paucity:ironmoney","paucity:ironmoney"},
+		{"paucity:ironmoney","paucity:ironmoney","paucity:ironmoney"},
+		{"","",""},
+	}
+})
+
 
 --get 1 iron lump for 2 ironmoney
 minetest.register_craft({
@@ -135,7 +152,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:tree',
 	recipe = {
-		{"paucity:emptymoney","paucity:ironmoney",""},
+		{"paucity:emptymoney","paucity:emptymoney","paucity:emptymoney"},
 		{"","",""},
 		{"","",""},
 	}
