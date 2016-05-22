@@ -5,5 +5,5 @@ The mod is designed to be temporary as it is meant to be used to speed up the pr
 
 This mod is for the just reddit test server running on the Minetest game engine
 
-Mod licensed with MIT. License details in LICENSE
+Mod licensed with MIT. License details in LICENSE.
 Textures waived with CC0. Waiver details in CC0_1.0_Universal.WAIVER
