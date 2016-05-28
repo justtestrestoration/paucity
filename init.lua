@@ -157,3 +157,13 @@ minetest.register_craft({
 		{"","",""},
 	}
 })
+
+--get 1 carts:cart
+minetest.register_craft({
+	output = 'carts:cart',
+	recipe = {
+		{"","",""},
+		{"paucity:emptymoney","","paucity:emptymoney"},
+		{"paucity:emptymoney","paucity:emptymoney","paucity:emptymoney"},
+	}
+})
