@@ -128,22 +128,22 @@ minetest.register_craft({
 })
 
 
---get 1 iron lump for 2 ironmoney
+--get 1 iron lump for 1 ironmoney
 minetest.register_craft({
 	output = 'default:iron_lump',
 	recipe = {
-		{"paucity:ironmoney","paucity:ironmoney",""},
+		{"paucity:ironmoney","",""},
 		{"","",""},
 		{"","",""},
 	}
 })
 
---get 1 coal for 1 ironmoney
+--get 1 coal for 4 emptymoney
 minetest.register_craft({
 	output = 'default:coal_lump',
 	recipe = {
-		{"paucity:ironmoney","",""},
-		{"","",""},
+		{"paucity:emptymoney","paucity:emptymoney",""},
+		{"paucity:emptymoney","paucity:emptymoney",""},
 		{"","",""},
 	}
 })
