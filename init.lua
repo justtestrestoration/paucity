@@ -37,6 +37,13 @@ minetest.register_craft({
 -- -------node registration-----------
 -- -----------------------------------
 
+--stonemoney
+minetest.register_node("paucity:stonemoney", {
+	description = "stonemoney",
+	tiles = {"stonemoney.png"},
+	groups = {choppy=2,dig_immediate=2},
+})
+
 --emptymoney
 minetest.register_node("paucity:emptymoney", {
 	description = "emptymoney",
@@ -61,6 +68,41 @@ minetest.register_node("paucity:protectmoney", {
 ---------------
 -- <emptymoney>
 ---------------
+
+--1 emptymoney is now a fuel
+minetest.register_craft({
+	type = "fuel",
+	recipe = "paucity:emptymoney",
+	burntime = 40,
+})
+
+--1 stonemoney is a fuel
+minetest.register_craft({
+	type = "fuel",
+	recipe = "paucity:stonemoney",
+	burntime = 4,
+})
+
+
+--how to craft stonemoney
+minetest.register_craft({
+	output = 'paucity:stonemoney',
+	recipe = {
+		{"default:cobble","default:cobble",""},
+		{"default:cobble","default:cobble",""},
+		{"default:cobble","default:cobble",""},
+	}
+})
+
+--how to craft emptymoney with stonemoney
+minetest.register_craft({
+	output = 'paucity:emptymoney',
+	recipe = {
+		{"paucity:stonemoney","paucity:stonemoney","paucity:stonemoney"},
+		{"paucity:stonemoney","paucity:stonemoney","paucity:stonemoney"},
+		{"","",""},
+	}
+})
 
 --how to craft emptymoney with default:dirt
 minetest.register_craft({
@@ -98,6 +140,26 @@ minetest.register_craft({
 	recipe = {
 		{"default:sand","default:sand","default:sand"},
 		{"default:sand","default:sand","default:sand"},
+		{"","",""},
+	}
+})
+
+--how to craft emptymoney with default:snowblock
+minetest.register_craft({
+	output = 'paucity:emptymoney',
+	recipe = {
+		{"default:snowblock","default:snowblock","default:snowblock"},
+		{"default:snowblock","default:snowblock","default:snowblock"},
+		{"","",""},
+	}
+})
+
+--how to craft emptymoney with default:gravel
+minetest.register_craft({
+	output = 'paucity:emptymoney',
+	recipe = {
+		{"default:gravel","default:gravel","default:gravel"},
+		{"default:gravel","default:gravel","default:gravel"},
 		{"","",""},
 	}
 })
@@ -165,5 +227,45 @@ minetest.register_craft({
 		{"","",""},
 		{"paucity:emptymoney","","paucity:emptymoney"},
 		{"paucity:emptymoney","paucity:emptymoney","paucity:emptymoney"},
+	}
+})
+
+--craft 1 ready to eat bread with 2 emptymoney
+minetest.register_craft({
+	output = 'farming:bread',
+	recipe = {
+		{"paucity:emptymoney","paucity:emptymoney",""},
+		{"","",""},
+		{"","",""},
+	}
+})
+
+--craft torches with 1 emptymoney and 1 wooden stick
+minetest.register_craft({
+	output = 'default:torch 4',
+	recipe = {
+		{"paucity:emptymoney","",""},
+		{"default:stick","",""},
+		{"","",""},
+	}
+})
+
+--craft 1 mese crystal with 1 protectmoney and 1 ironmoney
+minetest.register_craft({
+	output = 'default:mese_crystal',
+	recipe = {
+		{"paucity:protectmoney","paucity:ironmoney",""},
+		{"","",""},
+		{"","",""},
+	}
+})
+
+--craft 1 mese crystal with 1 protectmoney and 2 ironmoney
+minetest.register_craft({
+	output = 'default:diamond',
+	recipe = {
+		{"paucity:protectmoney","paucity:ironmoney","paucity:ironmoney"},
+		{"","",""},
+		{"","",""},
 	}
 })
